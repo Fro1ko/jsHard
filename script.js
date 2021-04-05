@@ -1,28 +1,39 @@
 "use strict";
 
-let num = 266219;
-let num2 = 1;
+let lang = "ru";
 
-let arr = (String(num).split(""));
+let arrRu = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 
-let answer = arr.reduce((acc, rec) => acc * rec);
-console.log(answer);
+let arrEn = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-console.log(answer **=3);
+if (lang === "ru") {
+  console.log(arrRu);
+} else if (lang === "en") {
+  console.log(arrEn);
+} else {
+  console.log("Что-то пошло не так!");
+}
 
-console.log(typeof(answer));    
 
-console.log(String(answer).substring(0, 2));
+switch (lang) {
+  case "en":
+    console.log(arrEn);
+    break;
+  case "ru":
+    console.log(arrRu);
+    break;
+  default:
+    console.log("Что-то пошло не так!");
+    break;
+}
 
-// второй способ
+let arr = {
+	'ru':['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+	'en':['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+};
+console.log(arr[lang]);
 
-// arr.forEach(function(el) {
-//   return(num2 *= el);
-// });
-// console.log(num2);
-
-// третий способ
-
-var num3 = arr.map( function(el, i) { return num2*=el; } );
-console.log( num3[5] ); 
+let namePerson = "Денис";
+let unnamed = namePerson === "Артем" ? console.log("Директор") : namePerson === "Максим" ? console.log("Преподаватель")
+: console.log("студент"); // если убрать переменную, выдаёт ошибку
 
