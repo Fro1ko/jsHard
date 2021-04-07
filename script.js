@@ -1,6 +1,6 @@
 "use strict";
 
-let lang = "ru";
+let lang = "en";
 
 let arrRu = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 
@@ -28,12 +28,10 @@ switch (lang) {
 }
 
 let arr = {
-	'ru':['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-	'en':['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+	'ru': arrRu,
+	'en': arrEn,
 };
 console.log(arr[lang]);
 
-let namePerson = "Денис";
-let unnamed = namePerson === "Артем" ? console.log("Директор") : namePerson === "Максим" ? console.log("Преподаватель")
-: console.log("студент"); // если убрать переменную, выдаёт ошибку
-
+let namePerson = "Максим";
+console.log(namePerson === "Артем" ? "Директор" : namePerson === "Максим" ? "Преподаватель" : "студент");
