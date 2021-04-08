@@ -1,37 +1,14 @@
 "use strict";
 
-let lang = "en";
-
-let arrRu = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-
-let arrEn = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
-if (lang === "ru") {
-  console.log(arrRu);
-} else if (lang === "en") {
-  console.log(arrEn);
-} else {
-  console.log("Что-то пошло не так!");
+let arg2 = "Lorem ipsum dolor sit amet , consectetur adipisicing elit. Et, dolores?";
+let arg = "                                  какая-то строка     ";
+function get(smthg) {
+  if  (typeof(smthg) !== 'string') {
+    alert("Нужна строка");
+    return;
+  } else {
+    smthg = smthg.trim();
+    return smthg.length > 30 ? smthg.slice(0, 30) + '...' : smthg;
+  }
 }
-
-
-switch (lang) {
-  case "en":
-    console.log(arrEn);
-    break;
-  case "ru":
-    console.log(arrRu);
-    break;
-  default:
-    console.log("Что-то пошло не так!");
-    break;
-}
-
-let arr = {
-	'ru': arrRu,
-	'en': arrEn,
-};
-console.log(arr[lang]);
-
-let namePerson = "Максим";
-console.log(namePerson === "Артем" ? "Директор" : namePerson === "Максим" ? "Преподаватель" : "студент");
+console.log(get(arg));
